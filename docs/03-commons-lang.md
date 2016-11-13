@@ -1,38 +1,10 @@
 <!-- .slide: data-background="img/background-lightgreen-orig.jpg" data-state="intro" class="center" -->
-##  Komponenten <!-- .element: class="heading" -->
+##  Components <!-- .element: class="heading" -->
 ### Apache Commons Lang <!-- .element: class="heading" -->
 
 ---
 
-### Fokus
-
-Erweiterung der Java Bibliothek um Methoden zur Manipulation der Basis-Klassen: `java.lang`
-- Manipulation von String, Boolean, Array, ...
-  - Der Klassiker: `StringUtils`
-- Einfache Numerik
-- Zugriff auf System-Eigenschaften
-- Bearbeitung von Datum + Zeit (Stoppuhr)
-- Hilfsmittel zur Implementierung von
-`hashCode()`, `toString()` und `equals(Object)`
-
----
-
-### ...Utils
-
-- Methoden für den täglichen Gebrauch
-- Statische Methoden für simpelste Verwendung
-- Null-Safe
-- Thread-Safe
-
-<small>
-`ArrayUtils, BooleanUtils, CharSetUtils, CharUtils, ClassUtils, DateFormatUtils, DateUtils, DurationFormatUtils, EnumUtils, ExceptionUtils, LocaleUtils, NumberUtils, ObjectUtils, RandomStringUtils, RandomUtils, SerializationUtils, StringEscapeUtils, StringUtils, SystemUtils, WordUtils`
-</small>
-
----
-
-### `StringUtils` (1/2)
-
-Ist ein String leer (null oder "")?
+### First example
 
 ```java
 if (string == null || string == "") { ... }
@@ -42,71 +14,76 @@ if (string == null || string == "") { ... }
 if (StringUtils.isEmpty(string)) { ... }
 ```
 
-Ist ein String leer oder Leerstring (null, "" oder " ")?
-
-
-```java
-if (string == null || string.length() < 1) { ... }
-```
-
-```java
-if (StringUtils.isBlank(string)) { ... }
-```
+Note:
+- yeah, code!
+- boring, everybody knows this
+- More methods like this for isBlank, anyBlank, etc.
+- generally all methods are null-safe if not documented otherwise
 
 ---
 
-### `StringUtils` (2/2)
+### Beyond StringUtils
 
-Sind zwei Strings gleich?
-
-```java
-if (a != null && a.equals(b)) {
-  // gleich
-} else if (a == null && b == null) {
-  // gleich
-}
-```
-
-```java
-if (StringUtils.equals(a, b)) { ... }
-```
+`ArrayUtils, BooleanUtils, CharSetUtils, CharUtils, ClassUtils, DateFormatUtils, DateUtils, DurationFormatUtils, EnumUtils, ExceptionUtils, LocaleUtils, NumberUtils, ObjectUtils, RandomStringUtils, RandomUtils, SerializationUtils, StringEscapeUtils, StringUtils, SystemUtils, WordUtils`
 
 ---
 
 ### `BooleanUtils`
 
-- Konvertierung eines String in einen boolean bzw. Boolean
-- Unterscheidung zwischen wahr, falsch und nicht ermittelbar
-
 ```java
 // Boolean.TRUE
-Boolean wahr = BooleanUtils.toBooleanObject("true");
+Boolean isTrue = BooleanUtils.toBooleanObject("true");
 // Boolean.FALSE
-Boolean falsch = BooleanUtils.toBooleanObject("off");
+Boolean isFalse = BooleanUtils.toBooleanObject("off");
 // null
-Boolean nichtErmittelbar = BooleanUtils.toBooleanObject("Hallo");
+Boolean isNull = BooleanUtils.toBooleanObject("Hello");
 ```
 
-- Übergabe eines Fallback Wertes
+- With fallback...
 
 ```java
-BooleanUtils.toBooleanDefaultIfNull(nichtErmittelbar, true);
+BooleanUtils.toBooleanDefaultIfNull(isNull, true);
 ```
+
+Note:
+- only really usuable for englisch applications
 
 ---
 
 ### `DateUtils`
 
-- Addition / Subtraktion von Jahren, Monaten, Wochen, Tagen, Stunden, Minuten, Sekunden, Millisekunden
+- Calculations on date objects
 
 ```java
-Date inEinemJahr = DateUtils.addYears(heute, 1);
+Date nextYear = DateUtils.addYears(heute, 1);
 ```
 
-- Datumsvergleich: Derselbe Tag ?
+- Date comparision: Same day?
 
 ```java
-boolean wahr = DateUtils.isSameDay(heuteMorgen, heuteAbend);
+boolean isTrue = DateUtils.isSameDay(thisMorning, thisEvening);
 ```
 
-- Trotzdem wenn möglich lieber Java 8 Time API oder Joda Time verwenden!
+- If possible use Java 8 Time API!
+
+Note:
+- Most regressions
+- Problem with Java 9
+
+---
+
+### `SystemUtils`
+
+- Easy access to Java system properties
+
+```java
+SystemUtils.IS_OS_WINDOWS_10; // hopefully this is false...
+SystemUtils.JAVA_HOME;
+SystemUtils.getJavaHome();
+```
+
+- Which Java Version am I running on?
+
+```java
+SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_7);
+```
