@@ -1,17 +1,15 @@
 ### Agenda
-- Lernziele
-- Einleitung
-- Komponenten
+- About Apache Commons
+- Apache Commons Components
   - Apache Commons Lang
   - Apache Commons IO
   - Apache Commons Validator
   - Apache Commons CSV
-- Schlusswort
+- Q&A
 
 ---
 
-### Lernziele
-
-- Überblick über das Open Source Projekt Apache Commons
-- Anwendung von ausgesuchten Komponenten
-- Interesse wecken: "Lust auf mehr"
+### Who is this presentation for?
+- JVM Developers
+- Beginners, Intermediates, Pros
+- Potential Contributors
