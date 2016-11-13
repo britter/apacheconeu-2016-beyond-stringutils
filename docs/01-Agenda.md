@@ -9,6 +9,12 @@
 
 ---
 
+### Quick poll
+
+> Who has never heard of/never used any Apache Commons component?
+
+---
+
 ### Who is this presentation for?
 - JVM Developers
 - Beginners, Intermediates, Pros
