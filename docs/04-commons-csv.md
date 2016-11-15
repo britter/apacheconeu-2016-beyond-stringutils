@@ -1,4 +1,4 @@
-<!-- .slide: data-background="img/background-dark-orig.jpg" data-state="intro" class="center" -->
+<!-- .slide: data-background="img/background-orange-orig.jpg" data-state="intro" class="center" -->
 ## Components <!-- .element: class="heading" style="text-align: center;"-->
 ### Apache Commons CSV <!-- .element: class="heading" style="text-align: center;"-->
 

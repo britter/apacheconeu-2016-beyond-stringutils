@@ -1,4 +1,4 @@
-<!-- .slide: data-background="img/background-violet-orig.jpg" data-state="intro" class="center" -->
+<!-- .slide: data-background="img/background-dark-orig.jpg" data-state="intro" class="center" -->
 ## Komponenten <!-- .element: class="heading" style="text-align: center;"-->
 ### Apache Commons Validator <!-- .element: class="heading" style="text-align: center;"-->
 
