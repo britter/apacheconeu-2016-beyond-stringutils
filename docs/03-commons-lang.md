@@ -24,7 +24,7 @@ Note:
 
 ### Craftsmanship advice
 
-> Overuse of `isNotEmpty` / `isNotBlank` may be a sign of code smells such as primitive obsession and anemanic domain model.
+> Overuse of `isNotEmpty` / `isNotBlank` may be a sign of code smells such as primitive obsession and anemic domain model.
 
 Note:
 - Everything is a String, instead of meaningful classes
@@ -88,7 +88,7 @@ Note:
 - Easy access to Java system properties
 
 ```java
-boolean win10 = SystemUtils.IS_OS_WINDOWS_10; // hopefully this is false...
+boolean win10 = SystemUtils.IS_OS_WINDOWS_10;
 String javaHomePath = SystemUtils.JAVA_HOME;
 File javaHome = SystemUtils.getJavaHome();
 ```
@@ -129,7 +129,8 @@ private static assumeAtLeast(JavaVersion version) {
 
 ```
 String replaced = StrSubstitutor.replaceSystemProperties(
-      "You are running with java.version = ${java.version} and os.name = ${os.name}.");
+      "You are running with java.version = ${java.version}" +
+      " and os.name = ${os.name}.");
 ```
 
 ---
@@ -139,7 +140,8 @@ String replaced = StrSubstitutor.replaceSystemProperties(
 ```
 Map<String, String> values = ...
 StrSubstitutor strSubstitutor = new StrSubstitutor(values);
-strSubstitutor.replace("Template with {customKey} and {another:-FallBack}");
+strSubstitutor.replace(
+        "Template with {customKey} and {another:-FallBack}");
 ```
 
 ---
