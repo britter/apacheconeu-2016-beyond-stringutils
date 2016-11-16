@@ -25,6 +25,22 @@ on(person).set("firstName").with("Peter")
 
 ---
 
+### Creating new instances
+
+```
+import static org.apache.commons.beanutils2.BeanUtils.on;
+
+Person person = onClassName("com.example.Person")
+          .loadWithThreadContextClassLoader()
+          .newInstance()
+          .get()
+```
+
+Note:
+- Variants for passing arguments to constructors
+
+---
+
 ### Exception wrapper
 
 - Wraps all exceptions thrown by java.reflect API
