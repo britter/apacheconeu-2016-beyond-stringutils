@@ -1,17 +1,18 @@
+### Quick poll
+
+> Who has never heard of/never used any Apache Commons component?
+
+---
+
 ### Agenda
 - About Apache Commons
 - Apache Commons Components
   - Apache Commons Lang
-  - Apache Commons IO
-  - Apache Commons Validator
   - Apache Commons CSV
+  - Apache Commons CLI
+  - Apache Commons BeanUtils2
+  - Misc
 - Q&A
-
----
-
-### Quick poll
-
-> Who has never heard of/never used any Apache Commons component?
 
 ---
 
@@ -19,3 +20,20 @@
 - JVM Developers
 - Beginners, Intermediates, Pros
 - Potential Contributors
+
+---
+
+### Why is this talk important?
+
+> Everything that is not part of your domain / business logic has already been development by somebody much smarter than you.
+
+Ritter's Law
+
+
+---
+
+### Why is this talk important?
+
+> Everything that is not part of your domain / business logic or the crazy legacy systems you need to integrate has already been development by somebody much smarter than you.
+
+Ritter's extended Law

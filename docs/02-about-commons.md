@@ -27,23 +27,6 @@ Note:
 
 ---
 
-### Why is this talk important?
-
-> Everything that is not part of your domain / business logic has already been development by somebody much smarter than you.
-
-Ritter's Law
-
-
----
-
-### Why is this talk important?
-
-> Everything that is not part of your domain / business logic or the crazy legacy systems you need to integrate has already been development by somebody much smarter than you.
-
-Ritter's extended Law
-
----
-
 ### Overview
 
 <dl>
