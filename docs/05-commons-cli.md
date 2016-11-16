@@ -1,6 +1,6 @@
 <!-- .slide: data-background="img/background-violet-orig.jpg" data-state="intro" class="center" -->
 ## Komponenten <!-- .element: class="heading" style="text-align: center;"-->
-## Apache Commons IO <!-- .element: class="heading" style="text-align: center;"-->
+## Apache Commons CLI <!-- .element: class="heading" style="text-align: center;"-->
 
 ---
 
