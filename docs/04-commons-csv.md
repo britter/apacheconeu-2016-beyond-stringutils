@@ -4,7 +4,7 @@
 
 ---
 
-### Einleitung
+### Introduction
 
 - Character Separated Value (CSV) is still a common data exchange format
 
@@ -14,7 +14,7 @@
 
 ---
 
-### CSV Varianten
+### CSV Variants
 
 CSV format variants differ in:
 
