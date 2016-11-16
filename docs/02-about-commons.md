@@ -59,5 +59,7 @@ Ritter's extended Law
 
 Note:
 - Not all proper components have a release
+    - (Almost) no dependencies
+    - Conservative development model
 - No process for graduating from sandbox to proper
 - working on moving more stuff to dormant
