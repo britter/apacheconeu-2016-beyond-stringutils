@@ -18,7 +18,7 @@ What I want:
 
 What Java gives me:
 
-```
+```java
 public static void main(String[] args) {
   if(args.length > 0) {
     if("-help".equals(args[0])) {
@@ -30,4 +30,27 @@ public static void main(String[] args) {
 
 ---
 
-### 
+### Defining Options with Commons CLI
+
+```java
+Options options = new Options()
+options.addOption("h", "help", false, "display the help");
+options.addOption(withArgName("file")
+                  .hasArg()
+                  .withDescription("use given file for log")
+                  .create("logfile"));
+```
+
+---
+
+### Parsing the Command Line
+
+```java
+CommandLine line = new DefaultParser().parse(options, args);
+if(line.hasOption("help")) {
+  new HelpFormatter().printHelp("cool-cli", options);
+} else if(line.hasOption("file")) {
+  this.logfile = line.getOptionValue("logfile");
+}
+
+```
