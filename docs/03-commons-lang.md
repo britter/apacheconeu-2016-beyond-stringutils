@@ -39,50 +39,6 @@ Note:
 
 ---
 
-### `BooleanUtils`
-
-```java
-// Boolean.TRUE
-Boolean isTrue = BooleanUtils.toBooleanObject("true");
-// Boolean.FALSE
-Boolean isFalse = BooleanUtils.toBooleanObject("off");
-// null
-Boolean isNull = BooleanUtils.toBooleanObject("Hello");
-```
-
-- With fallback...
-
-```java
-BooleanUtils.toBooleanDefaultIfNull(isNull, true);
-```
-
-Note:
-- only really usuable for englisch applications
-
----
-
-### `DateUtils`
-
-- Calculations on date objects
-
-```java
-Date nextYear = DateUtils.addYears(heute, 1);
-```
-
-- Date comparision: Same day?
-
-```java
-boolean isTrue = DateUtils.isSameDay(thisMorning, thisEvening);
-```
-
-- If possible use Java 8 Time API!
-
-Note:
-- Most regressions
-- Problem with Java 9
-
----
-
 ### `SystemUtils`
 
 - Easy access to Java system properties
@@ -104,9 +60,11 @@ Note:
 
 ---
 
-```
+### Java version check for testing
+
+```java
 import static org.junit.Assume.assumeTrue;
-import static org.apache.commons.lang3.JavaVersion.JAVA_1_7
+import static org.apache.commons.lang3.JavaVersion.JAVA_1_7;
 
 @Test
 public void java_version_specific_test() {
@@ -117,6 +75,25 @@ public void java_version_specific_test() {
 
 private static assumeAtLeast(JavaVersion version) {
   assumeTrue(SystemUtils.isJavaVersionAtLeast(version));
+}
+```
+
+---
+
+### Builders
+
+... for the commons methods in defined in `java.lang.Object`
+
+```
+public boolean equals(Object o) {
+  if (o == null) return false;
+  if (o == this) return true;
+  if (o.getClass() != getClass()) return false;
+
+  Person that = (Person) o;
+  return new EqualsBuilder().append(this.name, that.name)
+                            .append(this.age, that.age)
+                            .isEquals();
 }
 ```
 
@@ -150,7 +127,6 @@ strSubstitutor.replace(
 
 - Mutable variants of primitive wrapper types
 - (Im)MutablePair, (Im)MutableTriple
-- Equals-, Hashcode-, ToString-, DifferenceBuilder
 - ContextedRuntimeException, ContextedException
 - Text translations and escaping
 
