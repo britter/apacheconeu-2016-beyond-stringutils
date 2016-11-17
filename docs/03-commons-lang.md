@@ -82,7 +82,7 @@ private static assumeAtLeast(JavaVersion version) {
 
 ### Builders
 
-... for the commons methods in defined in `java.lang.Object`
+... for the common methods in defined in `java.lang.Object`
 
 ```
 public boolean equals(Object o) {
@@ -97,6 +97,14 @@ public boolean equals(Object o) {
 }
 ```
 
+Note:
+- ToString, hashcode, compareTo
+- Different toString styles
+  - JSON
+  - No Class Name
+  - No Field Name
+- Reflective versions
+
 ---
 
 ### StrSubstitutor
@@ -109,6 +117,10 @@ String replaced = StrSubstitutor.replaceSystemProperties(
       "You are running with java.version = ${java.version}" +
       " and os.name = ${os.name}.");
 ```
+
+Note:
+- Fully customizable
+- resonable defaults
 
 ---
 
