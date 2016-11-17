@@ -115,11 +115,13 @@ String replaced = StrSubstitutor.replaceSystemProperties(
 ### Custom substitutions
 
 ```
-Map<String, String> values = ...
+Map<String, String> values = singletonMap("customKey", "some value");
 StrSubstitutor strSubstitutor = new StrSubstitutor(values);
 strSubstitutor.replace(
-        "Template with {customKey} and {another:-FallBack}");
+        "Template with {customKey} and {another:-fallback value}");
 ```
+
+Results in _"Template with some value and fallback value"_
 
 ---
 
@@ -129,6 +131,12 @@ strSubstitutor.replace(
 - (Im)MutablePair, (Im)MutableTriple
 - ContextedRuntimeException, ContextedException
 - Text translations and escaping
+- ...
+
+Note:
+- Reflection helpers
+- Math
+- Concurrent utils
 
 ---
 
