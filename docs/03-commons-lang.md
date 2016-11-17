@@ -73,7 +73,7 @@ public void java_version_specific_test() {
   // do something only possbile with Java 7+
 }
 
-private static assumeAtLeast(JavaVersion version) {
+private static void assumeAtLeast(JavaVersion version) {
   assumeTrue(SystemUtils.isJavaVersionAtLeast(version));
 }
 ```

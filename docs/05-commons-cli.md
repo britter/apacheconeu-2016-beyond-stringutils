@@ -35,10 +35,12 @@ public static void main(String[] args) {
 ```java
 Options options = new Options()
 options.addOption("h", "help", false, "display the help");
-options.addOption(withArgName("file")
-                  .hasArg()
-                  .withDescription("use given file for log")
-                  .create("logfile"));
+options.addOption(builder("l")
+                    .longOpt("logfile")
+                    .hasArg()
+                    .argName("file")
+                    .desc("use given file for log")
+                    .build());
 ```
 
 ---
