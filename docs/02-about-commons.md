@@ -34,10 +34,10 @@ Note:
   <dd>Mature components like Lang, IO, Math.</dd>
 
   <dt>sandbox</dt>
-  <dd>playground for trying out new stuff.</dd>
+  <dd>Playground for trying out new stuff.</dd>
 
   <dt>dormant</dt>
-  <dd>attic inside of commons.</dd>
+  <dd>Attic inside of Commons.</dd>
 </dl>
 
 Note:
