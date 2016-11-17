@@ -10,8 +10,7 @@
   - Apache Commons Lang
   - Apache Commons CSV
   - Apache Commons CLI
-  - Apache Commons BeanUtils2
-  - Misc
+  - (Apache Commons BeanUtils2)
 - Q&A
 
 ---
