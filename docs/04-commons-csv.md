@@ -12,6 +12,9 @@
 
 - Problem: Although CSV is standardized (RTF-4180) there are a lot of variants
 
+Note:
+- Question: Who has written his own CSV parser already?
+
 ---
 
 ### CSV Variants
@@ -25,6 +28,9 @@ CSV format variants differ in:
 - headers or not
 
 The "simple split" becomes a nightmare
+
+Note:
+- Although XML is quite a complex standard, it is well defined
 
 ---
 
@@ -56,6 +62,10 @@ CSVFormat myFormat = CSVFormat.RTF4180
     .withHeader("CustomerNr", "Name", "First Name", "Birthday")
     .withIgnoreEmptyLines(true);
 ```
+
+Note:
+- Use Enum as header
+- It will pick enum value names as headers in enum order
 
 ---
 
