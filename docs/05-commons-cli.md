@@ -54,3 +54,11 @@ if(line.hasOption("help")) {
 }
 
 ```
+
+---
+
+### Result
+
+<!-- .slide: class="center" -->
+
+![](img/cli-cmdline.png)
