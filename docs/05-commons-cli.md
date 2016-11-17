@@ -1,77 +1,33 @@
 <!-- .slide: data-background="img/background-violet-orig.jpg" data-state="intro" class="center" -->
 ## Komponenten <!-- .element: class="heading" style="text-align: center;"-->
-## Apache Commons CLI <!-- .element: class="heading" style="text-align: center;"-->
+### Apache Commons CLI <!-- .element: class="heading" style="text-align: center;"-->
 
 ---
 
-### Einleitung
+### Motivation
 
-Hilfsmittel zur Implementierung von I/O Funktionen
+What I want:
 
-- Datei
-   - Lesen, Schreiben, Kopieren / Verschieben, Vergleichen
-- Verzeichnis
-  - (Inhalt) Lesen, Kopieren / Verschieben, Leeren, Löschen
-- IO Stream
-  - Lesen, Schreiben, Kopieren, Vergleichen
-- Weitere Hilfsmittel
-  - Dateifilter, IO Streams, Datei Komparatoren
+<!-- .slide: class="center" -->
+
+![](img/mvn-cmdline.png)
 
 ---
 
-### `FileUtils` - Arbeiten mit Dateien
+### Motivation
 
-Datei schreiben & lesen
+What Java gives me:
 
-```java
-File datei = new File("~/hallo.txt");
-FileUtils.writeStringToFile(datei, "Hallo Welt!");
 ```
-
-```java
-String halloWelt = FileUtils.readFileToString(datei);
-```
-
-Datei Kopieren
-
-```java
-File ziel = new File("~/halloKopie.txt");
-FileUtils.copyFile(datei, ziel);
-File verzeichnis = new File("~/verzeichnis");
-FileUtils.copyFileToDirectory(datei, verzeichnis);
-```
-
-Dateiinhalt vergleichen
-
-```java
-boolean identisch = FileUtils.contentEquals(datei, ziel);
+public static void main(String[] args) {
+  if(args.length > 0) {
+    if("-help".equals(args[0])) {
+      printHelp()
+    }
+  }
+}
 ```
 
 ---
 
-### `FileUtils` - Arbeiten mit Verzeichnissen
-
-Kopieren & Verschieben
-
-```java
-File quellVerzeichnis = new File("~/Quelle");
-File zielVerzeichnis = new File("~/Ziel");
-FileUtils.copyDirectory(quellVerzeichnis, zielVerzeichnis);
-```
-
-```java
-FileUtils.moveDirectory(quellVerzeichnis, zielVerzeichnis);
-```
-
-Rekursives Löschen
-
-```java
-FileUtils.deleteDirectory(verzeichnis);
-```
-
-Verzeichnis leeren (Unterverzeichnisse rekursiv löschen)
-
-
-```java
-FileUtils.cleanDirectory(verzeichnis);
-```
+### 

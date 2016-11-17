@@ -21,7 +21,7 @@ boolean korrekt = ccv.isValid("3435 4356 45342");
 - tree walking with filter
 
 ```
-String lines = IOUtils.readLines(inputStream);
+List<String> lines = IOUtils.readLines(inputStream);
 ```
 
 ---

@@ -28,7 +28,7 @@ on(person).set("firstName").with("Peter")
 ### Creating new instances
 
 ```
-import static org.apache.commons.beanutils2.BeanUtils.on;
+import static org.apache.commons.beanutils2.BeanUtils.onClassName;
 
 Person person = onClassName("com.example.Person")
           .loadWithThreadContextClassLoader()
