@@ -59,13 +59,33 @@ for (CSVRecord record : records) {
 ```java
 CSVFormat myFormat = CSVFormat.RTF4180
     .withSeparator(';')
-    .withHeader("CustomerNr", "Name", "First Name", "Birthday")
+    .withHeader("CustomerNo", "Name", "First Name", "Birthday")
     .withIgnoreEmptyLines(true);
 ```
 
 Note:
 - Use Enum as header
 - It will pick enum value names as headers in enum order
+
+---
+
+### Using an enum to define the header
+
+```java
+public enum Header {
+ CustomerNo, Name, First_Name, Birthday
+}
+
+CSVFormat myFormat = CSVFormat.RTF4180.withHeader(Header.class);
+
+for (CSVRecord record : myFormat.parse(in)) {
+    String customerNo = record.get(Header.CustomerNo);
+    String name = record.get(Header.Name);
+}
+```
+
+Note:
+- Could implement custom toString for First_name
 
 ---
 
@@ -83,4 +103,5 @@ Note:
 ### Limitations
 
 - Printing does not support all features (e.g. crazy line break characters)
+- No type conversion support - you always get a String
 - No support for mapping data directly into Java objects
